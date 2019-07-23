@@ -4,7 +4,11 @@ Answer the following questions for each of the data structures you implemented a
 
 1. What is the runtime complexity of `enqueue`?
 
-2. What is the runtime complexity of `dequeue`?
+I would estimate the runtime complexity of this method to be O(n) because each 
+
+1. What is the runtime complexity of `dequeue`?
+
+Similar to the enqueue method, the runtime complexity would be O(n) since 
 
 3. What is the runtime complexity of `len`?
 
