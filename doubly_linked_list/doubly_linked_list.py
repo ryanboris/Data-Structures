@@ -1,6 +1,3 @@
-import math
-
-
 class ListNode:
     def __init__(self, value, prev=None, next=None):
         self.value = value
@@ -128,7 +125,7 @@ class DoublyLinkedList:
             self.length -= 1
 
     def get_max(self):
-        max_val = -1 * math.inf
+        max_val = None
         current = self.head
         while current:
             if current.value > max_val:
