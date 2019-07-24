@@ -102,7 +102,7 @@ class DoublyLinkedList:
             self.tail = None
             self.length = 0
         else:
-            self.tail = self.head.prev
+            self.tail = self.tail.prev
             self.tail.next.delete()
             self.length -= 1
         return removed_tail
@@ -246,7 +246,7 @@ class DoublyLinkedList:
             self.tail = None
             self.length = 0
         else:
-            self.tail = self.head.prev
+            self.tail = self.tail.prev
             self.tail.next.delete()
             self.length -= 1
         return removed_tail
@@ -334,12 +334,10 @@ class TextBuffer:
             i += 1
 
     def delete_back(self, chars_to_remove):
-
         i = chars_to_remove
-        while i > chars_to_remove:
-            self.contents.delete(self.contents.tail)
+        while i > 0:
+            self.contents.remove_from_tail()
             i -= 1
-
     """
     Join other_buffer to self
     The input buffer gets concatenated to the end of this buffer
@@ -348,19 +346,9 @@ class TextBuffer:
     """
 
     def join(self, other_buffer):
-        # we might want to check that other_buffer is indeed a text buffer
         if isinstance(other_buffer, TextBuffer):
-
-            # set self list tail's next node to be the head of the other buffer
-            self.contents.tail.next = other_buffer.contents.head
-        # set other_buffer head's prev node to be the tail of this buffer
-            other_buffer.contents.head.prev = self.contents.tail
-
-    # if we get fed a string instead of a text buffer instance,
-    # initialize a new text buffer with this string and then
-    # call the join method
-        elif isinstance(other_buffer, str):
-            join_string(TextBuffer(other_buffer))
+            other_buffer = other_buffer.__str__()
+        self.join_string(other_buffer)
 
     def join_string(self, string_to_join):
         i = 0
