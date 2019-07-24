@@ -1,8 +1,3 @@
-"""Each ListNode holds a reference to its previous node
-as well as its next node in the List."""
-# %%
-
-
 import math
 
 
@@ -101,7 +96,7 @@ class DoublyLinkedList:
             self.tail = None
             self.length = 0
         else:
-            self.tail = self.head.prev
+            self.tail = self.tail.prev
             self.tail.next.delete()
             self.length -= 1
         return removed_tail
@@ -140,6 +135,3 @@ class DoublyLinkedList:
                 max_val = current.value
             current = current.next
         return max_val
-
-
-# %%
