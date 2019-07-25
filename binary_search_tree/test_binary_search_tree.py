@@ -32,7 +32,9 @@ class BinarySearchTreeTests(unittest.TestCase):
 
     def test_for_each(self):
         arr = []
-        def cb(x): return arr.append(x)
+
+        def cb(x):
+            return arr.append(x)
 
         v1 = random.randint(1, 101)
         v2 = random.randint(1, 101)

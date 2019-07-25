@@ -32,13 +32,13 @@ class AVLTree:
         self.update_height()  # Update height before balancing
         self.update_balance()
 
-        if self.node != None:
+        if self.node is not None:
             print('-' * level * 2, pref, self.node.key,
                   f'[{self.height}:{self.balance}]',
                   'L' if self.height == 0 else ' ')
-            if self.node.left != None:
+            if self.node.left is not None:
                 self.node.left.display(level + 1, '<')
-            if self.node.right != None:
+            if self.node.right is not None:
                 self.node.right.display(level + 1, '>')
 
     """
