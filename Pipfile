@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+nose = "*"
+pep8 = "*"
+autopep8 = "*"
+
+[packages]
+python-language-server = "*"
+jupyter = "*"
+
+[requires]
+python_version = "3.7"
