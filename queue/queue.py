@@ -1,9 +1,8 @@
-# %%
+
 class Node:
     def __init__(self, item):
         self.item = item
         self.next = None
-# %%
 
 
 class Queue:
@@ -32,4 +31,3 @@ class Queue:
 
     def len(self):
         return self.size
-# %%
