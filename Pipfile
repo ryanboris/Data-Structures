@@ -4,11 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-autopep8 = "*"
+nose = "*"
 pep8 = "*"
-pytest = "*"
+autopep8 = "*"
 
 [packages]
+python-language-server = "*"
 jupyter = "*"
 
 [requires]
