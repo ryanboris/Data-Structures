@@ -1,57 +1,99 @@
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
 Answer the following questions for each of the data structures you implemented as part of this project.
 
 ## Queue
 
-1. What is the runtime complexity of `enqueue`?
+What is the runtime complexity of `enqueue`?
 
-I would estimate the runtime complexity of this method to be O(n) because each 
+$$O(1)$$
+The node that is linked is a constant time process, since this is not an array, the rest of the array does not need to be reallocated with each enqueue.
 
-1. What is the runtime complexity of `dequeue`?
+What is the runtime complexity of `dequeue`?
+$$O(1)$$
+Same as the enqueue. The removal of the first node does not induce reallocation of any of the other elements.
 
-Similar to the enqueue method, the runtime complexity would be O(n) since 
-
-3. What is the runtime complexity of `len`?
+What is the runtime complexity of `len`?
+$$O(1)$$
+It is tracked by only mathematical operations which execute in constant time.
 
 ## Binary Search Tree
 
-1. What is the runtime complexity of `insert`?
+What is the runtime complexity of `insert`?
+Worst case scenario is:
+$$O(n)$$
+unless its balanced, if its balanced it would be:
+$$O(lg(n))$$
 
-2. What is the runtime complexity of `contains`?
+What is the runtime complexity of `contains`?
+Worst case scenario is:
+$$O(n)$$
+unless its balanced, if its balanced it would be:
+$$O(lg(n))$$
 
-3. What is the runtime complexity of `get_max`?
+What is the runtime complexity of `get_max`?
+Worst case scenario is:
+$$O(n)$$
+unless its balanced, if its balanced it would be:
+$$O(lg(n))$$
 
 ## Heap
 
-1. What is the runtime complexity of `_bubble_up`?
-
-2. What is the runtime complexity of `_sift_down`?
-
-3. What is the runtime complexity of `insert`?
-
-4. What is the runtime complexity of `delete`?
-
-5. What is the runtime complexity of `get_max`?
+What is the runtime complexity of `_bubble_up`?
+$$O(lg(n))$$
+What is the runtime complexity of `_sift_down`?
+$$O(lg(n))$$
+What is the runtime complexity of `insert`?
+$$O(lg(n))$$
+What is the runtime complexity of `delete`?
+$$O(lg(n))$$
+What is the runtime complexity of `get_max`?
+$$O(1)$$
 
 ## Doubly Linked List
 
-1. What is the runtime complexity of `ListNode.insert_after`?
+What is the runtime complexity of `ListNode.insert_after`?
+$$O(1)$$
+What is the runtime complexity of `ListNode.insert_before`?
+$$O(1)$$
+What is the runtime complexity of `ListNode.delete`?
+$$O(1)$$
+What is the runtime complexity of `DoublyLinkedList.add_to_head`?
+$$O(1)$$
+What is the runtime complexity of `DoublyLinkedList.remove_from_head`?
+$$O(1)$$
+What is the runtime complexity of `DoublyLinkedList.add_to_tail`?
+$$O(1)$$
+What is the runtime complexity of `DoublyLinkedList.remove_from_tail`?
+$$O(1)$$
+What is the runtime complexity of `DoublyLinkedList.move_to_front`?
+$$O(1)$$
+What is the runtime complexity of `DoublyLinkedList.move_to_end`?
+$$O(1)$$
+What is the runtime complexity of `DoublyLinkedList.delete`?
+$$O(1)$$
+Compare the runtime of the doubly linked list's `delete` method with the worst-case runtime of the JS `Array.splice` method. Which method generally performs better?
+The delete method of the linked list is
+$$O(1)$$
+it does not have to worry about reallocation of all the other values in its structure.
+Worst case for Array.splice should be
+$$O(n)$$
 
-2. What is the runtime complexity of `ListNode.insert_before`?
-
-3. What is the runtime complexity of `ListNode.delete`?
-
-4. What is the runtime complexity of `DoublyLinkedList.add_to_head`?
-
-5. What is the runtime complexity of `DoublyLinkedList.remove_from_head`?
-
-6. What is the runtime complexity of `DoublyLinkedList.add_to_tail`?
-
-7. What is the runtime complexity of `DoublyLinkedList.remove_from_tail`?
-
-8. What is the runtime complexity of `DoublyLinkedList.move_to_front`?
-
-9. What is the runtime complexity of `DoublyLinkedList.move_to_end`?
-
-10. What is the runtime complexity of `DoublyLinkedList.delete`?
-
-    a. Compare the runtime of the doubly linked list's `delete` method with the worst-case runtime of the JS `Array.splice` method. Which method generally performs better?
+It has to reallocate and copy every other item over one space in memory.
